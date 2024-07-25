@@ -1,0 +1,114 @@
+<style>
+  .body {
+    margin: 0;
+  }
+  .maincontainer {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+  }
+  .box {
+    width: 70%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+  }
+  .headingstyle {
+    width: 70%;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  .row {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* border-style: solid; */
+  }
+  .btncenter {
+    display: flex;
+    justify-content: center;
+  }
+  .btnsize {
+    margin-top: 5px;
+    width: 40%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .pic {
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    margin-left: auto;
+  }
+</style>
+<html>
+  <center>
+    <form
+      action="/food/edit_picture"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="maincontainer">
+        <div class="box">
+          <div class="headingstyle">
+            <input type="hidden" name="foodid" value="<%=data.foodid%>" />
+            <h2><%=data.foodname %></h2>
+            <br /><br />
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-xs-12 col-lg-6">
+              <img
+                src="/images/<%=data.foodpicture %>"
+                width="200"
+                height="200"
+              /><br /><br />
+              <b>Select New Picture</b><br />
+              <input
+                type="hidden"
+                name="oldfoodpicture"
+                value="<%=data.foodpicture %>"
+              />
+            </div>
+          </div>
+          <div>
+            <input
+              type="file"
+              style="margin-top: 5px"
+              required
+              id="foodpicture"
+              name="foodpicture"
+              accept="images/*"
+            /><br /><br />
+            <script>
+              const selectedFile = foodpicture.files;
+              cp.width = 50;
+              cp.src = URL.createObjectURL(selectedFile);
+            </script>
+            <div class="row">
+            <div class="col-sm-12 col-xs-12 col-lg-1" style="margin-top: 5px">
+              <img id="cp" width="200" height="200" />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-sm-12 col-xs-12 btncenter">
+            <button
+              type="submit"
+              class="btn btn-primary btnsize"
+              style="margin-top: 5px"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </center>
+</html>

@@ -1,0 +1,46 @@
+*{margin: 0;}
+.maincontainer{
+    
+    background-color: rgb(229, 222, 224);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+}
+
+.box{
+    margin: 10px;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+.headingstyle {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    size: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.btnsize{
+margin-top: 5px;
+width: 80%;
+}
+.pic{
+    width: 60%;
+    border-radius: 10%;
+}
